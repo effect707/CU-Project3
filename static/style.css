@@ -1,0 +1,187 @@
+/* Общий стиль для всего документа */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8; /* Светлый фон */
+    color: #2e3a59; /* Темный текст */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Добавление фона с размытыми элементами */
+body::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(71, 191, 223, 0.6), transparent); /* Голубой акцент */
+    top: -100px;
+    left: -100px;
+    filter: blur(150px);
+    z-index: -1;
+    animation: moveElement 20s infinite alternate;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(120, 206, 139, 0.5), transparent); /* Зеленый акцент */
+    bottom: -100px;
+    right: -100px;
+    filter: blur(150px);
+    z-index: -1;
+    animation: moveElement 30s infinite alternate;
+}
+
+/* Анимация для движения размытых элементов */
+@keyframes moveElement {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100px, 50px);
+    }
+}
+
+/* Контейнер для формы */
+.container {
+    margin: 100px auto;
+    padding: 30px;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9); /* Белый с прозрачностью */
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); /* Светлая тень */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.container1 {
+    margin: 100px auto;
+    padding: 30px;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Эффект при наведении на контейнер */
+.container:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовки */
+h2 {
+    color: #47bfdf; /* Голубой акцент */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #78ce8b; /* Зеленый акцент */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Стиль для подписи */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #6c7a92; /* Нежно-серый текст */
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Поля ввода и выпадающее меню */
+input[type="text"], select {
+    width: 100%;
+    height: 35px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border: 2px solid #cfd8e3;
+    border-radius: 8px;
+    color: #2e3a59;
+    transition: border-color 0.3s;
+    font-size: 16px;
+}
+
+/* Эффект при фокусе на полях ввода */
+input[type="text"]:focus, select:focus {
+    border-color: #47bfdf; /* Голубой */
+    outline: none;
+}
+
+/* Кнопка отправки */
+button.btn {
+    background-color: #47bfdf;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Эффект при наведении на кнопку */
+button.btn:hover {
+    background-color: #78ce8b; /* Зеленый */
+    box-shadow: 0px 5px 15px rgba(120, 206, 139, 0.5);
+    transform: scale(1.035);
+}
+
+/* Ссылки */
+a {
+    color: #47bfdf;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #78ce8b;
+}
+
+/* Сообщение об успешной погоде */
+.success {
+    color: #47bfdf; /* Голубой */
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* Сообщение о плохой погоде */
+.warning {
+    color: #ff6f61; /* Красноватый */
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* Анимация при загрузке */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Применение анимации */
+.container, h2, h3, p, label, input, select, button, a {
+    animation: fadeIn 0.7s ease-out;
+}
+
+.iframe-container {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: rgba(71, 191, 223, 0.1); /* Голубой фон */
+    border: 2px solid #47bfdf;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
